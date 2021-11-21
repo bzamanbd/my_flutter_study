@@ -16,6 +16,7 @@ class HomePage extends StatelessWidget {
       body: const Center(
         child: Text('Hello Flutter'),
       ),
+      backgroundColor: Colors.green[200],
     );
   }
 }
