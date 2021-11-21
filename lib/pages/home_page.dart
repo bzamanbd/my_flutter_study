@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/custom_btn.dart';
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -9,14 +10,32 @@ class HomePage extends StatelessWidget {
         title: const Text('Home Page'),
         centerTitle: true,
       ),
+      backgroundColor: Colors.grey[300],
       // drawer: ,
       // bottomNavigationBar: ,
       // bottomSheet: ,
       // floatingActionButton: ,
-      body: const Center(
-        child: Text('Hello Flutter'),
+      body:  Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children:  <Widget>[
+            customBNT(),
+            const SizedBox(
+              height: 20.0,
+            ),
+            customBNT(),
+            const SizedBox(
+              height: 20.0,
+            ),
+            customBNT(),
+            const SizedBox(
+              height: 20.0,
+            ),
+            customBNT(),
+          ],
+        ),
       ),
-      backgroundColor: Colors.green[200],
+      
     );
   }
 }
