@@ -1,39 +1,53 @@
 import 'package:flutter/material.dart';
-import '../widgets/circle_list_tile_leading.dart';
-import '../widgets/styles.dart';
+import '../widgets/custom_container.dart';
 class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
-final items = List.generate(40, (counter) => '$counter');
+   const HomePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ListView_List.generate'),
+        title: const Text('Stack Widget'),
         centerTitle: true,
       ),
-      backgroundColor: Colors.grey[100],
-      body: ListView.separated(
-        separatorBuilder: (context,index)=> const Divider(
-          endIndent: 5.0,
-        ),
-        scrollDirection: Axis.horizontal,
-        itemCount: items.length,
-        itemBuilder: (content, index){
-          return Center(
-            child: SizedBox(
-              width: 300,
-              height: 100,
-              child: ListTile(
-                contentPadding: const EdgeInsets.all(15.0),
-                leading: Leading(Colors.green,items[index],),
-                title: ListTileTitle('Title : ${items[index]}'),
-                trailing: const Icon(Icons.menu),
-                tileColor: Colors.grey[400],
-               ),
+      backgroundColor: Colors.grey[200],
+      body: Center(
+        child: Stack(
+          alignment: Alignment.center,
+          clipBehavior: Clip.none,
+          children: const <Widget>[
+            Positioned(
+              // top: 30,
+              
+              child: CustomContainer(
+                  Colors.green,
+                  'green',
+                  300.0,
+                  400.0,
+                ),
             ),
-          );
-        }
+            Positioned(
+              bottom: -30,
+              left: -30,
+              child: CustomContainer(
+                  Colors.red,
+                  'red',
+                  200.0,
+                  180.0,
+                ),
+            ),
+            Positioned(
+              right: -30,
+              child: CustomContainer(
+                  Colors.yellow,
+                  'yellow',
+                  100.0,
+                  200.0,
+                ),
+            ),
+          ],
         ),
+      )
     );
   }
 }
