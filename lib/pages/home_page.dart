@@ -57,9 +57,9 @@ class HomePage extends StatelessWidget {
             ),
             ListTile(
               contentPadding: const EdgeInsets.all(15.0),
-              leading:RectContainer(Colors.red,'4th'),
-              title: ListTileTitle('Forth Title'),
-              trailing: Icon(Icons.menu),
+              leading:const RectContainer(Colors.red,'4th'),
+              title: const ListTileTitle('Forth Title'),
+              trailing: const Icon(Icons.menu),
               tileColor: Colors.grey[400],
             ),
             const SizedBox(
