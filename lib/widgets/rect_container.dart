@@ -9,13 +9,13 @@ class RectContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
-      height: 150,
+      width: 50,
+      height: 50,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: bgColor,
       ),
-      child: Center(child: Text(title,style: const TextStyle(fontSize: 20.0),)),
+      child: Center(child: Text(title,style: const TextStyle(fontSize: 16.0),)),
     );
   }
 }
