@@ -1,80 +1,45 @@
 import 'package:flutter/material.dart';
 import '../widgets/styles.dart';
-import '../widgets/rect_container.dart';
-class HomePage extends StatelessWidget {
+import '../widgets/circle_list_tile_leading.dart';
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+class _HomePageState extends State<HomePage> {
+  List <int> list=[];
+  @override
+  void initState(){
+    for(int i=0; i<=30; i++){
+      list.add(i);
+    }
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Page'),
+        title: const Text('ListViewBuilder'),
         centerTitle: true,
       ),
-      backgroundColor: Colors.grey[300],
-      // drawer: ,
-      // bottomNavigationBar: ,
-      // bottomSheet: ,
-      // floatingActionButton: ,
+      backgroundColor: Colors.grey[200],
       body: Center(
-        child: ListView(
-          // scrollDirection: Axis.horizontal,
-          children: <Widget>[
-            const SizedBox(
-              height: 20,
-            ),
-             ListTile(
-              contentPadding: const EdgeInsets.all(15.0),
-              leading: const RectContainer(Colors.green,'1st',),
-              title: const ListTileTitle('First Title'),
-              trailing: const Icon(Icons.menu),
-              tileColor: Colors.grey[400],
-            ),
-            const SizedBox(
-              height: 20,
-              // width: 20,
-            ),
-             ListTile(
-              contentPadding: const EdgeInsets.all(15.0),
-              leading: const RectContainer(Colors.red,'2nd'),
-              title: const ListTileTitle('Second Title'),
-              trailing: const Icon(Icons.menu),
-              tileColor: Colors.grey[400],
-            ),
-            const SizedBox(
-              height: 20,
-              // width: 20,
-            ),
-            ListTile(
-              contentPadding: const EdgeInsets.all(15.0),
-              leading: const RectContainer(Colors.blue,'3rd'),
-              title: const ListTileTitle('Third Title'),
-              trailing: const Icon(Icons.menu),
-              tileColor: Colors.grey[400],
-            ),
-            const SizedBox(
-              height: 20,
-              // width: 20,
-            ),
-            ListTile(
-              contentPadding: const EdgeInsets.all(15.0),
-              leading:const RectContainer(Colors.red,'4th'),
-              title: const ListTileTitle('Forth Title'),
-              trailing: const Icon(Icons.menu),
-              tileColor: Colors.grey[400],
-            ),
-            const SizedBox(
-              height: 20,
-              // width: 20,
-            ),
-            ListTile(
-              contentPadding: const EdgeInsets.all(15.0),
-              leading: const RectContainer(Colors.green,'5th'),
-              title: const ListTileTitle('Fifth Title'),
-              trailing: const Icon(Icons.menu),
-              tileColor: Colors.grey[400],
-            ),
-          ],
-        ),
+        child: ListView.builder(
+          itemCount: list.length,
+          itemBuilder: (BuildContext cnt, int index){
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
+                contentPadding: const EdgeInsets.all(15.0),
+                leading: Leading(Colors.green,'${list[index]}',),
+                title:  ListTileTitle('Title ${list[index]}'),
+                trailing: const Icon(Icons.menu),
+                tileColor: Colors.grey[400],
+               ),
+            );
+          },
+          ),
       ),
     );
   }

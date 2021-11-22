@@ -1,10 +1,10 @@
 // ignore_for_file: prefer_typing_uninitialized_variables, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
-class RectContainer extends StatelessWidget {
+class Leading extends StatelessWidget {
   final bgColor;
   final String title;
-  const RectContainer(this.bgColor,this.title);
+  const Leading(this.bgColor,this.title);
 
   @override
   Widget build(BuildContext context) {
