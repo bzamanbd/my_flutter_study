@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import '../widgets/custom_btn.dart';
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int count=0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,20 +24,23 @@ class HomePage extends StatelessWidget {
       body:  Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children:  const <Widget>[
-            CustomBTN('Home'),
-            SizedBox(
-              height: 20.0,
+          children:   <Widget>[
+            Text('Current Value is = $count',
+            style: const TextStyle(
+              fontSize: 18.0,
             ),
-            CustomBTN('Ok'),
-            SizedBox(
-              height: 20.0,
             ),
-            CustomBTN('cancel'),
-            SizedBox(
-              height: 20.0,
+            const SizedBox(
+              height: 22.0,
             ),
-            CustomBTN('Go'),
+            InkWell(
+              onTap: (){
+                setState(() {
+                  count++;
+                });
+              },
+              child: const CustomBTN('Counter'),
+            ),
           ],
         ),
       ),
