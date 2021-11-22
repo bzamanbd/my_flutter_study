@@ -18,20 +18,20 @@ class HomePage extends StatelessWidget {
       body:  Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children:  <Widget>[
-            customBNT(),
-            const SizedBox(
+          children:  const <Widget>[
+            CustomBTN('Home'),
+            SizedBox(
               height: 20.0,
             ),
-            customBNT(),
-            const SizedBox(
+            CustomBTN('Ok'),
+            SizedBox(
               height: 20.0,
             ),
-            customBNT(),
-            const SizedBox(
+            CustomBTN('cancel'),
+            SizedBox(
               height: 20.0,
             ),
-            customBNT(),
+            CustomBTN('Go'),
           ],
         ),
       ),
