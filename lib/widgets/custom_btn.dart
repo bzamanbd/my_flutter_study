@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class CustomBTN extends StatelessWidget {
   final String btnTitle;
   const CustomBTN(this.btnTitle, {Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
