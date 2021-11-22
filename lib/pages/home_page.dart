@@ -15,19 +15,29 @@ class HomePage extends StatelessWidget {
       // bottomSheet: ,
       // floatingActionButton: ,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            RectContainer(Colors.green),
-            SizedBox(
-              height: 20,
-            ),
-            RectContainer(Colors.red),
-            SizedBox(
-              height: 20,
-            ),
-            RectContainer(Colors.blue),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const <Widget>[
+              RectContainer(Colors.green),
+              SizedBox(
+                height: 20,
+              ),
+              RectContainer(Colors.red),
+              SizedBox(
+                height: 20,
+              ),
+              RectContainer(Colors.blue),
+              SizedBox(
+                height: 20,
+              ),
+              RectContainer(Colors.red),
+              SizedBox(
+                height: 20,
+              ),
+              RectContainer(Colors.green),
+            ],
+          ),
         ),
       ),
     );
