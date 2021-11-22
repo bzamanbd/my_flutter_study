@@ -4,7 +4,6 @@ import '../widgets/styles.dart';
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
 final items = List.generate(40, (counter) => '$counter');
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
