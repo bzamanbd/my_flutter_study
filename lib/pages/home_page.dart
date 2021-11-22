@@ -12,23 +12,23 @@ final items = List.generate(40, (counter) => '$counter');
         centerTitle: true,
       ),
       backgroundColor: Colors.grey[100],
-      body: Center(
-        child: ListView.builder(
-          itemCount: items.length,
-          itemBuilder: (content, index){
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ListTile(
-                contentPadding: const EdgeInsets.all(15.0),
-                leading:   Leading(Colors.green,items[index],),
-                title:   ListTileTitle('Title : ${items[index]}'),
-                trailing: const Icon(Icons.menu),
-                tileColor: Colors.grey[400],
-               ),
-            );
-          }
+      body: ListView.separated(
+        separatorBuilder: (context,index)=>const Divider(
+          color: Colors.green, thickness: 5.0,
+          endIndent: 100,
+          height: 5,
           ),
-      ),
+        itemCount: items.length,
+        itemBuilder: (content, index){
+          return ListTile(
+            contentPadding: const EdgeInsets.all(15.0),
+            leading:   Leading(Colors.green,items[index],),
+            title:   ListTileTitle('Title : ${items[index]}'),
+            trailing: const Icon(Icons.menu),
+            tileColor: Colors.grey[400],
+           );
+        }
+        ),
     );
   }
 }
