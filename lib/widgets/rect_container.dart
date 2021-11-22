@@ -11,7 +11,7 @@ class RectContainer extends StatelessWidget {
       width: 200,
       height: 150,
       decoration: BoxDecoration(
-        shape: BoxShape.rectangle,
+        shape: BoxShape.circle,
         color: bgColor,
       ),
     );
