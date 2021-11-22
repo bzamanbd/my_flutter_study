@@ -20,23 +20,23 @@ class HomePage extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const <Widget>[
-              RectContainer(Colors.green),
+              RectContainer(Colors.green,'1st',),
               SizedBox(
                 height: 20,
               ),
-              RectContainer(Colors.red),
+              RectContainer(Colors.red,'2nd'),
               SizedBox(
                 height: 20,
               ),
-              RectContainer(Colors.blue),
+              RectContainer(Colors.blue,'3rd'),
               SizedBox(
                 height: 20,
               ),
-              RectContainer(Colors.red),
+              RectContainer(Colors.red,'4th'),
               SizedBox(
                 height: 20,
               ),
-              RectContainer(Colors.green),
+              RectContainer(Colors.green,'5th'),
             ],
           ),
         ),
