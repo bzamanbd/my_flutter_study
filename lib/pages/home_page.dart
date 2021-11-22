@@ -16,7 +16,8 @@ class HomePage extends StatelessWidget {
       // floatingActionButton: ,
       body: Center(
         child: SingleChildScrollView(
-          child: Column(
+          scrollDirection: Axis.horizontal,
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const <Widget>[
               RectContainer(Colors.green),
