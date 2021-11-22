@@ -13,20 +13,25 @@ final items = List.generate(40, (counter) => '$counter');
       ),
       backgroundColor: Colors.grey[100],
       body: ListView.separated(
-        separatorBuilder: (context,index)=>const Divider(
-          color: Colors.green, thickness: 5.0,
-          endIndent: 100,
-          height: 5,
-          ),
+        separatorBuilder: (context,index)=> const Divider(
+          endIndent: 5.0,
+        ),
+        scrollDirection: Axis.horizontal,
         itemCount: items.length,
         itemBuilder: (content, index){
-          return ListTile(
-            contentPadding: const EdgeInsets.all(15.0),
-            leading:   Leading(Colors.green,items[index],),
-            title:   ListTileTitle('Title : ${items[index]}'),
-            trailing: const Icon(Icons.menu),
-            tileColor: Colors.grey[400],
-           );
+          return Center(
+            child: SizedBox(
+              width: 300,
+              height: 100,
+              child: ListTile(
+                contentPadding: const EdgeInsets.all(15.0),
+                leading: Leading(Colors.green,items[index],),
+                title: ListTileTitle('Title : ${items[index]}'),
+                trailing: const Icon(Icons.menu),
+                tileColor: Colors.grey[400],
+               ),
+            ),
+          );
         }
         ),
     );
