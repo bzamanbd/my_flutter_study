@@ -6,32 +6,36 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'GridView with Count'
+          'Image.asset'
         ),
         centerTitle:true,
       ),
       backgroundColor: Colors.grey[200],
-      body: const Center(
-        child: Text.rich(
-          TextSpan(
-            text: 'this is default font style.',
-            children: [
-              TextSpan(
-                text: 'another font style',
-                style: TextStyle(fontSize: 40, fontFamily: 'Estonia',color: Colors.green)
-              ),
-              TextSpan(
-                text: 'Other Style',
-                style: TextStyle(
-                  fontFamily: 'Estonia',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 40,
-                )
-              ),
-            ]
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children:  [
+                const CircleAvatar(
+                  backgroundImage: AssetImage('assets/images/Asian Openbill.jpg'),
+                  radius: 150,
+                ),
+                const SizedBox(height: 10,),
+                Container(
+                  width: 300,
+                  height: 300,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(image: AssetImage('assets/images/Barn Owl.jpg')),
+                  ),
+                ),
+                
+              ],
+            ),
           ),
-
-          ),
+        ),
+      
       )
     );
   }
