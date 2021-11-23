@@ -3,16 +3,16 @@
 import 'package:flutter/material.dart';
 class CustomContainer extends StatelessWidget {
   final bgColor;
-  final double cwidth;
-  final double cheight;
+  // final double cwidth;
+  // final double cheight;
   final String title;
-   const CustomContainer(this.bgColor,this.title,this.cwidth,this.cheight);
+   const CustomContainer(this.bgColor,this.title);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: cwidth,
-      height: cheight,
+      // width: cwidth,
+      // height: cheight,
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
         color: bgColor,
