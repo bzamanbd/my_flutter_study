@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       ),
       // routes: ,
       // initialRoute: ,
-      home:  const HomePage(),
+      home: HomePage(),
     );
   }
 }
