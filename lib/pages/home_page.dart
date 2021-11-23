@@ -11,21 +11,14 @@ class HomePage extends StatelessWidget {
         centerTitle:true,
       ),
       backgroundColor: Colors.grey[200],
-      body: Center(
-        child: Card(
-          color: Colors.green,
-          elevation: 15,
-          shadowColor: Colors.red,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30)
-            ),
-          child: const SizedBox(
-          width: 300,
-          height: 300,
-          child: Center(child: Text('title',style: TextStyle(fontSize: 26.0),)),
-          )
-         
+      body: const Center(
+        child: Text('This is a Custom Text',
+        style: TextStyle(
+          fontSize: 50,
+          fontWeight: FontWeight.w500,
+          fontFamily: 'Estonia',
         ),
+        )
       )
     );
   }
