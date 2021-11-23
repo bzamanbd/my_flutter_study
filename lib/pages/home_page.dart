@@ -12,13 +12,26 @@ class HomePage extends StatelessWidget {
       ),
       backgroundColor: Colors.grey[200],
       body: const Center(
-        child: Text('This is a Custom Text',
-        style: TextStyle(
-          fontSize: 50,
-          fontWeight: FontWeight.w500,
-          fontFamily: 'Estonia',
-        ),
-        )
+        child: Text.rich(
+          TextSpan(
+            text: 'this is default font style.',
+            children: [
+              TextSpan(
+                text: 'another font style',
+                style: TextStyle(fontSize: 40, fontFamily: 'Estonia',color: Colors.green)
+              ),
+              TextSpan(
+                text: 'Other Style',
+                style: TextStyle(
+                  fontFamily: 'Estonia',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40,
+                )
+              ),
+            ]
+          ),
+
+          ),
       )
     );
   }
