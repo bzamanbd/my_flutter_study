@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import '../widgets/custom_container.dart';
 class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
-  final items = List.generate(40, (counter) => '$counter');
+  const HomePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,17 +11,22 @@ class HomePage extends StatelessWidget {
         centerTitle:true,
       ),
       backgroundColor: Colors.grey[200],
-      body:GridView.builder(
-        gridDelegate:  const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
-        itemCount: items.length,
-        padding: const EdgeInsets.all(8),
-        itemBuilder: (context,index){
-          return   Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: CustomContainer(Colors.blue,items[index]),
-          );
-        }
-        )
+      body: Center(
+        child: Card(
+          color: Colors.green,
+          elevation: 15,
+          shadowColor: Colors.red,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30)
+            ),
+          child: const SizedBox(
+          width: 300,
+          height: 300,
+          child: Center(child: Text('title',style: TextStyle(fontSize: 26.0),)),
+          )
+         
+        ),
+      )
     );
   }
 }
