@@ -1,12 +1,27 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+   const HomePage({Key? key}) : super(key: key);
   @override
   State<HomePage> createState() => _HomePageState();
 }
 class _HomePageState extends State<HomePage> {
+  String filePath='';
+  Future<void> checkPermission() async{
+if (await Permission.storage.request().isGranted) {
+//permission granted
+setState(() {
+  filePath= '/storage/emulated/0/Download/fish.jpeg';
+});
+}else{
+//request for permission
+await Permission.storage.request();
+}
+}
   @override
   Widget build(BuildContext context) {
+    checkPermission();
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -21,12 +36,13 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.all(20.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children:  const [
-                CircleAvatar(
-                  backgroundImage: NetworkImage('https://oceanbeachsandiego.com/sites/default/files/d7/photos/newport-avenue-ocean-beach-flower-02.jpg'),
-                  radius: 150,
+              children:[
+                SizedBox(
+                  width: 400,
+                  height: 400,
+                  child: Image.file(File(filePath)),
                 ),
-                SizedBox(height: 10,),
+                
               ],
             ),
           ),
