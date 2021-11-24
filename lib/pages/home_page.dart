@@ -6,7 +6,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Image.asset'
+          'Network Image'
         ),
         centerTitle:true,
       ),
@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children:  [
                 const CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/Asian Openbill.jpg'),
+                  backgroundImage: NetworkImage('https://oceanbeachsandiego.com/sites/default/files/d7/photos/newport-avenue-ocean-beach-flower-02.jpg'),
                   radius: 150,
                 ),
                 const SizedBox(height: 10,),
@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
                   width: 300,
                   height: 300,
                   decoration: const BoxDecoration(
-                    image: DecorationImage(image: AssetImage('assets/images/Barn Owl.jpg')),
+                    image: DecorationImage(image: NetworkImage('https://cdn.shopify.com/s/files/1/0549/8421/2633/files/750x1100_copy_720x.jpg?v=1615795396')),
                   ),
                 ),
                 
