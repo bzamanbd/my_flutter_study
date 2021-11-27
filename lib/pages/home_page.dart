@@ -1,55 +1,28 @@
-import 'dart:typed_data';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-class HomePage extends StatefulWidget {
-     const HomePage({Key? key}) : super(key: key);
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-class _HomePageState extends State<HomePage> {
-  Uint8List? imageData;
-  @override
-  void initState() {
-    super.initState();
-    loadAsset();
-  }
-  Future<void> loadAsset() async {
-    Uint8List data = (await rootBundle.load('assets/images/Barn Owl.jpg'))
-        .buffer
-        .asUint8List();
-    // setState(() => imageData = data);
-    setState(() {
-      imageData=data;
-    });
-  }
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    var width=MediaQuery.of(context).size.width;
+    var height=MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Memory Image'
-        ),
-        centerTitle:true,
+        title: const Text('Icon Widget'),
+        centerTitle: true,
       ),
-      backgroundColor: Colors.grey[200],
-      body: SingleChildScrollView(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children:[
-                SizedBox(
-                  width: 400,
-                  height: 400,
-                  child: Image.memory(imageData!),
-                ),
-              ],
-            ),
+      body: Center(
+        child: Container(
+          width: width/2,
+          height: height/4,
+          color: Colors.grey[300],
+          child: const Icon(
+            Icons.volume_up_rounded,
+            size: 40,
+            color: Colors.deepPurple,
           ),
         ),
-      
-      )
+      ),
     );
   }
 }

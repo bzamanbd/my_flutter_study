@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Hello Flutter',
+      title: 'Icon Widget',
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
