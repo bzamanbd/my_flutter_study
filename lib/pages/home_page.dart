@@ -12,15 +12,22 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
       ),
       body: Center(
-        child: Container(
-          width: width/2,
-          height: height/4,
-          color: Colors.grey[300],
-          child: const Icon(
-            Icons.volume_up_rounded,
-            size: 40,
-            color: Colors.deepPurple,
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: width/2,
+              height: height/4,
+              color: Colors.grey[300],
+              child: IconButton(
+                onPressed: (){}, 
+                icon: const Icon(Icons.volume_up_rounded,
+                color: Colors.deepOrange,
+                size: 40,
+                ),
+                )
+            ),
+          ],
         ),
       ),
     );
