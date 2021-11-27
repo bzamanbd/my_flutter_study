@@ -1,31 +1,33 @@
-import 'dart:io';
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
-import 'package:permission_handler/permission_handler.dart';
+import 'package:flutter/services.dart';
 class HomePage extends StatefulWidget {
-   const HomePage({Key? key}) : super(key: key);
+     const HomePage({Key? key}) : super(key: key);
   @override
   State<HomePage> createState() => _HomePageState();
 }
 class _HomePageState extends State<HomePage> {
-  String filePath='';
-  Future<void> checkPermission() async{
-if (await Permission.storage.request().isGranted) {
-//permission granted
-setState(() {
-  filePath= '/storage/emulated/0/Download/fish.jpeg';
-});
-}else{
-//request for permission
-await Permission.storage.request();
-}
-}
+  Uint8List? imageData;
+  @override
+  void initState() {
+    super.initState();
+    loadAsset();
+  }
+  Future<void> loadAsset() async {
+    Uint8List data = (await rootBundle.load('assets/images/Barn Owl.jpg'))
+        .buffer
+        .asUint8List();
+    // setState(() => imageData = data);
+    setState(() {
+      imageData=data;
+    });
+  }
   @override
   Widget build(BuildContext context) {
-    checkPermission();
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Network Image'
+          'Memory Image'
         ),
         centerTitle:true,
       ),
@@ -40,9 +42,8 @@ await Permission.storage.request();
                 SizedBox(
                   width: 400,
                   height: 400,
-                  child: Image.file(File(filePath)),
+                  child: Image.memory(imageData!),
                 ),
-                
               ],
             ),
           ),
