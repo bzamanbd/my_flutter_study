@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Icon Widget',
+      title: 'Icon Button',
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
