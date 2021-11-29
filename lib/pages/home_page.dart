@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key); 
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -11,48 +11,43 @@ class _HomePageState extends State<HomePage> {
   
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-    var height = MediaQuery.of(context).size.height;
+    // var width = MediaQuery.of(context).size.width;
+    // var height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Icon Button'),
+        title: const Text('Text Field'),
         centerTitle: true,
       ),
       body: Center(
         child: Container(
-          width: width/1.3,
-          height: height/2,
-          decoration: const BoxDecoration(
-            color: Colors.grey,
-            shape: BoxShape.rectangle,
-            borderRadius: BorderRadius.all(Radius.circular(20)),
-          ),
-          
+          padding: const EdgeInsets.all(16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-             RichText(text: TextSpan(
-               children: <TextSpan>[
-                 const TextSpan(text: 'Current value : ', style: TextStyle(fontSize: 20.0)),
-                 TextSpan(text: '$count', style: const TextStyle( fontSize: 30, fontWeight: FontWeight.bold, color: Colors.purple)),
-               ]
-             )),
-              SizedBox(
-                height: height/40,
-              ),
-              IconButton(
-                onPressed: (){
-                  setState(() {
-                    count++;
-                  });
-                }, 
-                icon:  const Icon(Icons.volume_up,
-                size: 40,
-                color: Colors.purple,
+            children:  const [
+              TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10),
+                    
+                    ),
+                  ),
+                  hintText: 'Enter Your Email',
+                  labelText: 'E-mail',
+                  labelStyle: TextStyle(fontSize: 24, color: Colors.purple
                 ),
-                
-                )
-            ],
+              )
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  hintText: 'Enter Your Password',
+                  labelText: 'Password',
+                  
+                  labelStyle: TextStyle(fontSize: 24, color: Colors.purple
+                ),
+              )
+              ),
+              
+              ],
           ),
         ),
       )
