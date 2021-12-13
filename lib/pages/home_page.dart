@@ -11,7 +11,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Elevated Button'),
+        title: const Text('Elevated Button Icon'),
         centerTitle: true,
       ),
       // drawer: ,
@@ -19,21 +19,10 @@ class _HomePageState extends State<HomePage> {
       // bottomSheet: ,
       // floatingActionButton: ,
       body: Center(
-        child: ElevatedButton(
-          onPressed: (){
-            setState(() {
-              // print('button is clicked');
-            });
-          },
-          child: const Text('Click Me',
-          style: TextStyle(
-            fontSize: 20.0,
-          ),
-          ),
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.blue),
-            
-          ),
+        child: ElevatedButton.icon(
+          onPressed: (){}, 
+          icon: const Icon(Icons.person), 
+          label: const Text('Click Me'),
           ),
       ),
     );
