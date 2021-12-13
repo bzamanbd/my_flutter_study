@@ -9,21 +9,34 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Elevated Button Icon'),
+        title: const Text('InkWell'),
         centerTitle: true,
       ),
       // drawer: ,
-      // bottomNavigationBar: ,
+      // bottomNavigationBar:,
       // bottomSheet: ,
-      // floatingActionButton: ,
-      body: Center(
-        child: ElevatedButton.icon(
-          onPressed: (){}, 
-          icon: const Icon(Icons.person), 
-          label: const Text('Click Me'),
+      body: InkWell(
+        child: Center(
+          child: Container(
+            width: size.width / 2.0,
+            height: size.height / 8.0,
+            color: Colors.green,
+            child: const Center(
+              child: Text('Click Me',
+              textAlign: TextAlign.center,
+              ),
+      
+            ),
           ),
+        ),
+        onTap: (){
+          setState(() {
+            print('button is clicked');
+          });
+        },
       ),
     );
   }
