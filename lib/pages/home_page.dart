@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import '/widgets/first_tab.dart';
 import '/widgets/second_tab.dart';
 import '/widgets/third_tab.dart';
@@ -23,22 +24,32 @@ class _HomePageState extends State<HomePage> {
         // drawer: ,
         // bottomSheet: ,
         // floatingActionButton: ,
-        bottomNavigationBar: const TabBar(
-          tabs: [
-            Tab(
-              icon: Icon(Icons.person),
-              text: "Person",
-            ),
-            Tab(
-              icon: Icon(Icons.camera),
-              text: "Camera",
-            ),
-            Tab(
-              icon: Icon(Icons.menu_book),
-              text: "Menu",
-            ),
-          ],
+        bottomNavigationBar: const Material(
+          color: Colors.green,
+          shape:RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(70.0),
+              topRight: Radius.circular(0.0),
+            )
           ),
+          child: TabBar(
+            tabs: [
+              Tab(
+                icon: Icon(Icons.person),
+                text: "Person",
+              ),
+              Tab(
+                icon: Icon(Icons.camera),
+                text: "Camera",
+              ),
+              Tab(
+                icon: Icon(Icons.menu_book),
+                text: "Menu",
+              ),
+            ],
+            ),
+        ),
+          
           body: const TabBarView(
             children: [
             FirstTab(),
