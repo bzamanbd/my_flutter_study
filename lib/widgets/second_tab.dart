@@ -9,6 +9,9 @@ class SecondTab extends StatelessWidget {
       width: double.infinity,
       height: double.infinity,
       color: Colors.green,
+      child: const Center(
+        child: Text('This is Second TabBarView'),
+      ),
     );
   }
 }

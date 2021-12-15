@@ -7,7 +7,10 @@ class FirstTab extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      color: Colors.grey[300],
+      color: Colors.red[300],
+      child: const Center(
+        child: Text('This is TabBarView One'),
+      ),
     );
   }
 }

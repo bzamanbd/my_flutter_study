@@ -9,6 +9,9 @@ class ThirdTab extends StatelessWidget {
       width: double.infinity,
       height: double.infinity,
       color: Colors.blue,
+      child: const Center(
+        child: Text('This is Third TabBarView'),
+      ),
     );
   }
 }
