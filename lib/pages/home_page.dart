@@ -11,46 +11,39 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(size.height/3.5),
-        child: AppBar(
-          // leading: const Icon(Icons.person),
-          title: const Text('AppBar',
-          style: TextStyle(
-            fontSize: 30.0,
-            // fontFamily: ,
-            // fontStyle: FontStyle.italic,
-          ),
-          ),
-          centerTitle: true,
-          // backgroundColor: Colors.blue,
-          elevation: 8.0,
-          shadowColor: Colors.grey,
-          toolbarOpacity: .6,
-          // toolbarHeight: 150.0,
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(50.0),
-              bottomRight: Radius.circular(50.0),
-              )
-          ),
-          flexibleSpace: ClipRRect(
-            borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(50.0),
-              bottomRight: Radius.circular(50.0),
+      appBar: AppBar(
+        backgroundColor: Colors.grey,
+        toolbarHeight: size.height/8,
+        // leading: Image.asset('assets/images/Logo.png'),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset('assets/images/Logo.png',
+            // height: size.height / 8,
             ),
-            child: Container(
-              decoration:  BoxDecoration(
-                image: DecorationImage(image: const AssetImage('assets/images/Barn Owl.jpg'),
-                fit: BoxFit.fill,
-                colorFilter: ColorFilter.mode(
-                  Colors.grey.withOpacity(0.5),BlendMode.colorBurn
-                  ),
-                )
-              ),
+            SizedBox(width: size.width/30,),
+            const Text('My Cat',
+            style: TextStyle(
+              fontSize: 26.0,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 1.5,
             ),
-          ),
+            )
+          ],
         ),
+        actions: [
+          
+          // IconButton(
+          //   onPressed: (){}, 
+          //   icon: const Icon(Icons.search,color: Colors.amber,),
+          //   ),
+          
+          TextButton.icon(
+            onPressed: (){}, 
+            icon: const Icon(Icons.search,color: Colors.white,), 
+            label: const Text('Search',style: TextStyle(color: Colors.white),),
+          )
+        ],
       ),
     );
   }
