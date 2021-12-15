@@ -9,9 +9,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'InkWell',
+      title: 'Gesture Detector',
       theme: ThemeData(
-        primarySwatch: Colors.indigo
+        primarySwatch: Colors.orange,
       ),
       // routes: ,
       // initialRoute: ,

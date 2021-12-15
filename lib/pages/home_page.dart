@@ -9,34 +9,36 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    Size size =MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('InkWell'),
+        title: const Text('Gesture Detector'),
         centerTitle: true,
       ),
       // drawer: ,
-      // bottomNavigationBar:,
+      // bottomNavigationBar: ,
       // bottomSheet: ,
-      body: InkWell(
-        child: Center(
+      // floatingActionButton: ,
+      body: Center(
+        child: GestureDetector(
+          onTap: (){
+            setState(() {
+              // print('button clicked');
+            });
+          },
           child: Container(
-            width: size.width / 2.0,
-            height: size.height / 8.0,
-            color: Colors.green,
-            child: const Center(
-              child: Text('Click Me',
-              textAlign: TextAlign.center,
-              ),
-      
+            alignment: Alignment.center,
+            width: size.width / 2,
+            height: size.height / 8,
+            color: Colors.red,
+            child: const Text('Click Me',
+            style: TextStyle(
+              fontSize: 20.0,
+              color: Colors.white,
+            ),
             ),
           ),
         ),
-        onTap: (){
-          setState(() {
-            print('button is clicked');
-          });
-        },
       ),
     );
   }
