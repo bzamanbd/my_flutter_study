@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
         // bottomSheet: ,
         // floatingActionButton: ,
         bottomNavigationBar: const Material(
-          color: Colors.green,
+          color: Colors.indigo,
           shape:RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(70.0),
@@ -33,6 +33,11 @@ class _HomePageState extends State<HomePage> {
             )
           ),
           child: TabBar(
+            labelColor: Colors.amber,
+            unselectedLabelColor: Colors.white,
+            labelStyle: TextStyle(
+              fontSize: 16.0,
+            ),
             tabs: [
               Tab(
                 icon: Icon(Icons.person),
