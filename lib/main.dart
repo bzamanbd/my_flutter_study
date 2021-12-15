@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'pages/home_page.dart';
 void main()=>runApp(const MyApp());
 class MyApp extends StatelessWidget {
@@ -9,13 +8,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Gesture Detector',
+      title: 'Appbar',
       theme: ThemeData(
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.brown
       ),
       // routes: ,
       // initialRoute: ,
-      home: const HomePage(),
+      home:  const HomePage(),
     );
   }
 }
