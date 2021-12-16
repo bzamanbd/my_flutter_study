@@ -1,21 +1,28 @@
 import 'package:flutter/material.dart';
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final String title;
+  const HomePage({Key? key,required this.title}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  bool _cbValue1 = false;
-  bool _cbValue2 = false;
-  bool _cbValue3 = false;
+  int _groupValue=0;
+  void rmethod(value){
+    setState(() {
+      _groupValue=value;
+    });
+  }
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
-        title: const Text('CheckBox'),
+        title: Text(widget.title,
+        style: const TextStyle(
+          fontSize: 20
+        ),
+        ),
         centerTitle: true,
       ),
       // drawer: ,
@@ -23,35 +30,37 @@ class _HomePageState extends State<HomePage> {
       // bottomSheet: ,
       // floatingActionButton: ,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.purple,width: 2.0),
-              ),
-              child: Checkbox(value: _cbValue1, onChanged: (status){setState(() {
-                _cbValue1 =status!;
-              });},
-              shape: const CircleBorder(),
-              ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Radio(
+                  value: 1, 
+                  groupValue: _groupValue, 
+                  onChanged: rmethod,
+                  ),
+                Radio(
+                  value: 2, 
+                  groupValue: _groupValue, 
+                  onChanged: rmethod,
+                  ),
+                Radio(
+                  value: 3, 
+                  groupValue: _groupValue, 
+                  onChanged: rmethod,
+                  ),
+                Radio(
+                  value: 4, 
+                  groupValue: _groupValue, 
+                  onChanged: rmethod,
+                  ),
+                Radio(
+                  value: 5, 
+                  groupValue: _groupValue, 
+                  onChanged: rmethod,
+                  ),
+              ],
             ),
-            Checkbox(value: _cbValue2, onChanged: (status){setState(() {
-              _cbValue2=status!;
-            });},
-            ),
-            Checkbox(value: _cbValue3, onChanged: (status){setState(() {
-              _cbValue3=status!;
-            });}),
-            Checkbox(value: _cbValue1, onChanged: (status){setState(() {
-              _cbValue1=status!;
-            });},
-            shape: const CircleBorder(),
-            ),
-            
-          ],
-        ),
-      )
+      ),
     );
   }
 }
