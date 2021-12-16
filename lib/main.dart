@@ -7,15 +7,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const String title = 'Radio Button';
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Checkbox',
+      title: title,
       theme: ThemeData(
-        primarySwatch: Colors.purple
+        primarySwatch: Colors.grey
       ),
       // routes: ,
       // initialRoute: ,
-      home: const HomePage(),
+      home: const HomePage(title:title),
     );
   }
 }
