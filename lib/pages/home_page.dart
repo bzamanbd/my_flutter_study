@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import '/widgets/first_tab.dart';
-import '/widgets/second_tab.dart';
-import '/widgets/third_tab.dart';
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -11,58 +7,46 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool _cbValue1 = false;
+  bool _cbValue2 = false;
+  bool _cbValue3 = false;
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      initialIndex: 0,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Bottom TabBar'),
-          centerTitle: true,
-        ),
-        // drawer: ,
-        // bottomSheet: ,
-        // floatingActionButton: ,
-        bottomNavigationBar: const Material(
-          color: Colors.indigo,
-          shape:RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(70.0),
-              topRight: Radius.circular(0.0),
-            )
-          ),
-          child: TabBar(
-            labelColor: Colors.amber,
-            unselectedLabelColor: Colors.white,
-            labelStyle: TextStyle(
-              fontSize: 16.0,
-            ),
-            tabs: [
-              Tab(
-                icon: Icon(Icons.person),
-                text: "Person",
-              ),
-              Tab(
-                icon: Icon(Icons.camera),
-                text: "Camera",
-              ),
-              Tab(
-                icon: Icon(Icons.menu_book),
-                text: "Menu",
-              ),
-            ],
-            ),
-        ),
-          
-          body: const TabBarView(
-            children: [
-            FirstTab(),
-            SecondTab(),
-            ThirdTab()
-          ]
-          )
+    
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('CheckBox'),
+        centerTitle: true,
       ),
+      // drawer: ,
+      // bottomNavigationBar: ,
+      // bottomSheet: ,
+      // floatingActionButton: ,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.purple,width: 2.0)
+              ),
+              child: Checkbox(value: _cbValue1, onChanged: (status){setState(() {
+                _cbValue1 =status!;
+              });}),
+            ),
+            Checkbox(value: _cbValue2, onChanged: (status){setState(() {
+              _cbValue2=status!;
+            });}),
+            Checkbox(value: _cbValue3, onChanged: (status){setState(() {
+              _cbValue3=status!;
+            });}),
+            Checkbox(value: _cbValue1, onChanged: (status){setState(() {
+              _cbValue1=status!;
+            });}),
+            
+          ],
+        ),
+      )
     );
   }
 }
