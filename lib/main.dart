@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
 void main()=>runApp(const MyApp());
 class MyApp extends StatelessWidget {
-  final String title='Radio Button';
+  final String title='Radio List Tile';
   const MyApp({Key? key}) : super(key: key);
 
   @override
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: title,
       theme: ThemeData(
-        primarySwatch: Colors.pink
+        primarySwatch: Colors.orange
       ),
       // routes: ,
       // initialRoute: ,
