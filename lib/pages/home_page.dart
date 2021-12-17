@@ -44,10 +44,15 @@ class _HomePageState extends State<HomePage> {
                   min: 0,
                   max: 10,
                   onChanged: smethod,
+                  activeColor: Colors.pink,
+                  inactiveColor: Colors.yellow[300],
+                  thumbColor: Colors.blue,
+                  divisions: 20,
+                  label: 'Value',
                   ),
                 Text('Range : $_sValue',
                 style:const TextStyle(
-                  fontSize: 14.0,
+                  fontSize: 20.0,
                   fontWeight: FontWeight.bold
                   ) ,
                 ),
