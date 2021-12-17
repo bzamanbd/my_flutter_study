@@ -8,11 +8,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  double _sValue=1.0;
-  void smethod(value){
-    setState(() {
-      _sValue = value;
-    });
+  bool _swValue=false;
+  void swmethod(value){
+  setState(() {
+    _swValue=value;
+  });
   }
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text(widget.title,
         style: const TextStyle(
-          fontSize: 26.0,
+          fontSize: 22.0
         ),
         ),
         centerTitle: true,
@@ -29,38 +29,24 @@ class _HomePageState extends State<HomePage> {
       // bottomNavigationBar: ,
       // bottomSheet: ,
       // floatingActionButton: ,
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Center(
-          child: Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.red,width: 2),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Slider(
-                  value: _sValue,
-                  min: 0,
-                  max: 10,
-                  onChanged: smethod,
-                  activeColor: Colors.pink,
-                  inactiveColor: Colors.yellow[300],
-                  thumbColor: Colors.blue,
-                  divisions: 20,
-                  label: 'Value',
-                  ),
-                Text('Range : $_sValue',
-                style:const TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold
-                  ) ,
-                ),
-              ],
-            ),
+      body: Center(
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.red,width: 2),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Switch(
+              value: _swValue,
+              onChanged: swmethod,
+              activeColor: Colors.blue,
+              activeTrackColor: Colors.pink,
+              inactiveTrackColor: Colors.indigo[300],
+              inactiveThumbColor: Colors.yellow,
+              ),
           ),
         ),
-        ),
+      ),
     );
   }
 }
