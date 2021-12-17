@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
 void main()=>runApp(const MyApp());
 class MyApp extends StatelessWidget {
-  final String title='Switch List Tile';
+  final String title='Custom Font';
   const MyApp({Key? key}) : super(key: key);
 
   @override
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: title,
       theme: ThemeData(
-        primarySwatch: Colors.brown
+        primarySwatch: Colors.orange
       ),
       // routes: ,
       // initialRoute: ,

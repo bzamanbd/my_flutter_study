@@ -8,49 +8,29 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool _swValue=false;
-  void swMethod(value){
-    setState(() {
-      _swValue=value;
-    });
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.title,
+        style: const TextStyle(
+          fontFamily: 'Corinthia',
+          fontSize: 40.0,
+          fontWeight: FontWeight.bold,
+        ),
+        ),
         centerTitle: true,
       ),
       // drawer: ,
       // bottomNavigationBar: ,
-      // bottomSheet:,
+      // bottomSheet: ,
       // floatingActionButton: ,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SwitchListTile(
-              value: _swValue, 
-              onChanged: swMethod,
-              title: const Text('Switch One'),
-              subtitle: const Text('subtitle'),
-              secondary: const Icon(Icons.person),
-              selectedTileColor: Colors.red[100],
-              selected: _swValue,
-              controlAffinity: ListTileControlAffinity.trailing,
-            ),
-            SwitchListTile(
-              value: _swValue, 
-              onChanged: swMethod,
-              title: const Text('Switch Two'),
-              subtitle: const Text('subtitle'),
-              secondary:  const Icon(Icons.menu_book),
-              selectedTileColor: Colors.red[100],
-              selected: _swValue,
-              controlAffinity: ListTileControlAffinity.leading,
-            ),
-            
-          ],
+      body: const Center(
+        child: Text('This is a Custom Font',
+        style: TextStyle(
+          fontSize: 46.0,
+          fontFamily: 'Corinthia',
+        ),
         ),
       ),
     );
