@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
       // bottomSheet: ,
       // floatingActionButton: ,
       drawer:ClipRRect(
-        borderRadius: BorderRadius.only(topRight: Radius.circular(0), bottomRight: Radius.circular(300)),
+        borderRadius: const BorderRadius.only(topRight: Radius.circular(0), bottomRight: Radius.circular(300)),
         child: Drawer(
           backgroundColor: Colors.orange[80],
           elevation: 10.0,
@@ -28,29 +28,29 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.zero,
             children: [
               UserAccountsDrawerHeader(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                 color: Colors.green,
                 ),
-                accountName: Text('New User',style: TextStyle(color: Colors.black,fontSize: 18.0),), 
+                accountName: const Text('New User',style: TextStyle(color: Colors.black,fontSize: 18.0),), 
                 accountEmail: const Text('nextuser@gmail.com',style: TextStyle(color: Colors.black),),
                 currentAccountPicture:ClipRRect(
                   borderRadius:const BorderRadius.all(Radius.circular(5.0)),
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.white
                     ),
-                    child: Image(image: AssetImage('assets/images/Logo.png')),
+                    child: const Image(image: AssetImage('assets/images/Logo.png')),
                   ),
                 ),
                 arrowColor: Colors.red,
-                currentAccountPictureSize: Size(80, 80),
+                currentAccountPictureSize: const Size(80, 80),
               ),
               ListTile(
-                leading: Icon(Icons.menu_book),
-                title: Text('First Page'),
-                trailing: Icon(Icons.arrow_drop_down),
+                leading: const Icon(Icons.menu_book),
+                title: const Text('First Page'),
+                trailing: const Icon(Icons.arrow_drop_down),
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (cnt)=>PageOne(title: 'Page One')));
+                  Navigator.push(context, MaterialPageRoute(builder: (cnt)=>const PageOne(title: 'Page One')));
                 },
               )
               
