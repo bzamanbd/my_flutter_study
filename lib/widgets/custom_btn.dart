@@ -12,7 +12,7 @@ class CustomBTN extends StatelessWidget {
         width: size.width / 1.5,
         decoration: const BoxDecoration(
           color: Colors.purple,
-          borderRadius: BorderRadius.all(Radius.circular(50.0))
+          borderRadius: BorderRadius.all(Radius.circular(50))
         ),
         child: MaterialButton(
           onPressed: onPressed,
