@@ -1,49 +1,46 @@
 import 'package:flutter/material.dart';
 class OtherPage extends StatelessWidget {
-  final String txt;
-  final String txt2;
-  const OtherPage({Key? key,required this.txt,required this.txt2}) : super(key: key);
+  final String title;
+  const OtherPage({Key? key,required this.title}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return  Scaffold(
+    var mapData = ModalRoute.of(context)?.settings.arguments as Map<String, Object>;
+    Size size=MediaQuery.of(context).size;
+    return Scaffold(
       appBar: AppBar(
-        title: const Text('Data from HomePage'),
+        title: Text(title),
         centerTitle: true,
       ),
-      body: 
-      SafeArea(
-        child: Center(
-          child: Container(
-            width: size.width,
-            height: size.height,
-            decoration: BoxDecoration(color: Colors.green[800]),
-            alignment: Alignment.center,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(txt,
-                style: const TextStyle(
-                  fontSize: 28.0,
-                  fontStyle: FontStyle.normal,
-                  color: Colors.white,
-                  decoration: TextDecoration.none,
-                ),
-                ),
-                SizedBox(height: size.height/30,),
-                
-                Text(txt2,
-                style: const TextStyle(
-                  fontSize: 28.0,
-                  fontStyle: FontStyle.normal,
-                  color: Colors.white,
-                  decoration: TextDecoration.none,
-                ),
-                ),
-                
-              ],
-            ),
+      body: Center(
+        child: Container(
+          width: size.width,
+          height: size.height,
+          decoration: BoxDecoration(
+            color: Colors.purple[100],
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text('${mapData['name']}',style: const TextStyle(
+                fontSize:20.0,
+                fontWeight: FontWeight.bold,
+              ),),
+              SizedBox(height: size.height/50,),
+              Text('${mapData['phone']}',style: const TextStyle(
+                fontSize:20.0,
+                fontWeight: FontWeight.bold,
+              ),),
+              SizedBox(
+                height: size.height / 50,
+              ),
+              Text('${mapData['address']}',style: const TextStyle(
+                fontSize:20.0,
+                fontWeight: FontWeight.bold,
+              ),),
+        
+            ],
           ),
         ),
       ),
