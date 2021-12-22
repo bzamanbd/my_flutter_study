@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-class PageTwo extends StatelessWidget {
+class PageThree extends StatelessWidget {
   final String title;
-  const PageTwo({Key? key,required this.title}) : super(key: key);
+  const PageThree({Key? key,required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +15,9 @@ class PageTwo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: const [
-            Text('This is page Two',
+            Text('This is page Three',
             style: TextStyle(
-              fontSize: 24,
+              fontSize: 23.0,
               fontWeight: FontWeight.bold
             ),
             )

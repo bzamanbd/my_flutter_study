@@ -10,8 +10,17 @@ class PageOne extends StatelessWidget {
         title: Text(title),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text('This is Page One'),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: const [
+            Text('This is Page One',style: TextStyle(
+              fontSize: 23,
+              fontWeight:FontWeight.bold,
+            ))
+          ],
+        ),
       ),
     );
   }
