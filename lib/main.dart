@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
-import 'pages/welcome_page.dart';
+import 'pages/home_page.dart';
 void main()=>runApp(const MyApp());
 class MyApp extends StatelessWidget {
-  final String title='Method Widget';
   const MyApp({Key? key}) : super(key: key);
+  final String title='Passing Data';
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: title,
-      theme: ThemeData(
-        primarySwatch: Colors.pink
-      ),
+      theme: ThemeData(primarySwatch: Colors.purple),
       // routes: ,
       // initialRoute: ,
-      home: const WelcomePage(),
+      home: HomePage(title:title),
     );
   }
 }
