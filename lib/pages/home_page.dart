@@ -18,7 +18,9 @@ class HomePage extends StatelessWidget {
       // floatingActionButton: ,
       body: Center(
         child: CustomBTN(btnText: 'Go OtherPage',onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder:(cxt)=>const OtherPage(txt: 'I Love Flutter')));
+          Navigator.push(context, MaterialPageRoute(builder:(cxt)=>const OtherPage(
+            txt: 'I Love Dart',txt2: 'I Love Flutter',
+            )));
         },),
       )
     );
