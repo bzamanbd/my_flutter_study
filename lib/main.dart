@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         '/pageTwo':(cnt)=>PageTwo(title: title),
         '/pageThree':(cnt)=>PageThree(title:title),
       },
+      // initialRoute: '/',
     );
   }
 }
