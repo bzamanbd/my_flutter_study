@@ -26,7 +26,8 @@ class _WelcomePageState extends State<WelcomePage> {
               SizedBox(height: size.height / 30),
               CustomBTN(
                 onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (ctx)=>const PageOne(title: 'PageOne')));
+                  // Navigator.push(context, MaterialPageRoute(builder: (ctx)=>const PageOne(title: 'PageOne')));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (cnt)=>const PageOne(title: 'PageOne')));
                 },
                 btnText: 'Sign In',
               ),
