@@ -1,45 +1,40 @@
 import 'package:flutter/material.dart';
-class OtherPage extends StatelessWidget {
+import 'package:my_flutter_study/widgets/custom_btn.dart';
+class OtherPage extends StatefulWidget {
+  const OtherPage({Key? key, required this.title}) : super(key: key);
   final String title;
-  const OtherPage({Key? key,required this.title}) : super(key: key);
+
+  @override
+  State<OtherPage> createState() => _OtherPageState();
+}
+
+class _OtherPageState extends State<OtherPage> {
+  String backData='Flutter';
 
   @override
   Widget build(BuildContext context) {
-    var mapData = ModalRoute.of(context)?.settings.arguments as Map<String, Object>;
-    Size size=MediaQuery.of(context).size;
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Container(
-          width: size.width,
-          height: size.height,
-          decoration: BoxDecoration(
-            color: Colors.purple[100],
-          ),
+    return WillPopScope(
+      onWillPop: () async{
+        Navigator.of(context).pop(backData);
+        return false;
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
+          centerTitle: true,
+          backgroundColor: Colors.green,
+        ),
+        body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text('${mapData['name']}',style: const TextStyle(
-                fontSize:20.0,
-                fontWeight: FontWeight.bold,
-              ),),
-              SizedBox(height: size.height/50,),
-              Text('${mapData['phone']}',style: const TextStyle(
-                fontSize:20.0,
-                fontWeight: FontWeight.bold,
-              ),),
-              SizedBox(
-                height: size.height / 50,
-              ),
-              Text('${mapData['address']}',style: const TextStyle(
-                fontSize:20.0,
-                fontWeight: FontWeight.bold,
-              ),),
-        
+              CustomBTN(
+                btnText: 'goBack', 
+                onPressed: (){
+                  Navigator.of(context).pop(backData);
+                }
+              )
             ],
           ),
         ),
