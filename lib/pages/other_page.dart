@@ -11,13 +11,17 @@ class OtherPage extends StatefulWidget {
 class _OtherPageState extends State<OtherPage> {
   String backData='Flutter';
 
+  void _onBackPressed(){
+    Navigator.of(context).pop(backData);
+  }
+  
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async{
-        Navigator.of(context).pop(backData);
+        _onBackPressed();
         return false;
-      },
+      } ,
       child: Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
@@ -31,9 +35,7 @@ class _OtherPageState extends State<OtherPage> {
             children: [
               CustomBTN(
                 btnText: 'goBack', 
-                onPressed: (){
-                  Navigator.of(context).pop(backData);
-                }
+                onPressed: _onBackPressed,
               )
             ],
           ),
