@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-class HomePageProvider with ChangeNotifier{
+class HomePageProvider extends ChangeNotifier{
   bool? isEligible;
   String? eligibleMessage='';
   void eligibilityChecker(int age){
