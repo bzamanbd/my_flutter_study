@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import '/pages/other_page.dart';
 import 'pages/home_page.dart';
 void main()=>runApp(const MyApp());
 class MyApp extends StatelessWidget {
-  final String title='DataBackPopingPage';
+  final String title='Provider';
   const MyApp({Key? key}) : super(key: key);
 
   @override
@@ -11,12 +10,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: title,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      routes: {
-        '/':(_)=> HomePage(title: title,),
-        '/otherPage':(cnt)=> OtherPage(title: title),
+      theme: ThemeData(primarySwatch: Colors.purple),
+      routes:{
+        '/':(_)=>HomePage(title:title),
       },
       // initialRoute: ,
+      // home: ,
     );
   }
 }
