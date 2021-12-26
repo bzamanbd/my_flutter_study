@@ -16,7 +16,7 @@ class FoodsGrid extends StatelessWidget {
         crossAxisCount: 2,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
-        childAspectRatio: 3/2,
+        childAspectRatio: 2/2,
         ), 
       itemBuilder: (cnt,i)=> FoodItem(
         products[i].id,

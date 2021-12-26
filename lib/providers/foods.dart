@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/food.dart';
 class Foods extends ChangeNotifier{
-  final List<Food> _items=[
+  final List <Food>_items=[
     Food(
       id: 'p1', 
       title: 'Burger', 
