@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
       debugShowCheckedModeBanner: false,
       title: title,
-      theme: ThemeData(primarySwatch: Colors.purple),
+      theme: ThemeData(primarySwatch: Colors.pink),
       routes: {
         '/':(_)=>FoodOverView(title:title),
         '/foodDetail':(context)=>const FoodDetailScreen(),
