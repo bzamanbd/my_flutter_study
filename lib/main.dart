@@ -1,28 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:my_flutter_study/providers/foods.dart';
 import 'package:provider/provider.dart';
-import 'screens/food_detail.dart';
-import 'screens/food_overview.dart';
+import '../providers/food_provider.dart';
+import '../screens/food_detail_screen.dart';
+import '../screens/food_overview_screen.dart';
 void main()=>runApp(const MyApp());
 class MyApp extends StatelessWidget {
-  final String title='Food Order';
+  final String title='Food Menu';
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<Foods>(
-      create: (_)=>Foods(),
+    return ChangeNotifierProvider(
+      create: (_)=>FoodProvider(),
       child: MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: title,
-      theme: ThemeData(primarySwatch: Colors.pink),
-      routes: {
-        '/':(_)=>FoodOverView(title:title),
-        '/foodDetail':(context)=>const FoodDetailScreen(),
-      },
-    ),
+        debugShowCheckedModeBanner: false,
+        title: title,
+        theme: ThemeData(primarySwatch: Colors.blue),
+        home: FoodOverViewScreen(title: title),
+        routes: {
+         '/detail-page':(_)=>const FoodDetailScreen()
+        },
+      ),
     );
-    
-    
   }
 }
