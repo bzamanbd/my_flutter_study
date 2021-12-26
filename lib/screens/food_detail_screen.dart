@@ -40,7 +40,7 @@ class FoodDetailScreen extends StatelessWidget {
             ),
             Text(
               'Tk ${food.price!.toStringAsFixed(2)}',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20,
                 color: Colors.black54,
                 fontWeight: FontWeight.w500
@@ -51,7 +51,7 @@ class FoodDetailScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Text(
                 food.description.toString(),
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   color: Colors.black54,
                   height: 1.5,
