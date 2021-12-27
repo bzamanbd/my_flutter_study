@@ -14,7 +14,7 @@ class FoodProvider extends ChangeNotifier{
       id: 'f2', 
       title: 'CHICKEN FRY', 
       description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.', 
-      price: 150, 
+      price: 300, 
       imageUrl: 'assets/images/chicken.webp',
     ),
 
@@ -22,7 +22,7 @@ class FoodProvider extends ChangeNotifier{
       id: 'f3', 
       title: 'KFC', 
       description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.', 
-      price: 150, 
+      price: 350.50, 
       imageUrl: 'assets/images/kfc.webp',
     ),
 
@@ -30,7 +30,7 @@ class FoodProvider extends ChangeNotifier{
       id: 'f4', 
       title: 'PIZZA', 
       description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.', 
-      price: 150, 
+      price: 500, 
       imageUrl: 'assets/images/pizza.jpg',
     ),
   ];
