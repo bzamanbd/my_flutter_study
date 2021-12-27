@@ -8,22 +8,20 @@ class FoodGridWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final foodData = Provider.of<FoodProvider>(context);
-    final product = foodData.items;
+    final foods = foodData.items;
     return GridView.builder(
       padding: const EdgeInsets.all(10.0),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        childAspectRatio: 2/2,
+        childAspectRatio: 3/2,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
       ), 
-      itemBuilder: (context, i) => FoodItemWidget(
-        product[i].id,
-        product[i].title,
-        product[i].imageUrl,
-        
+      itemBuilder: (context, i) => ChangeNotifierProvider(
+        create: (_)=>foods[i],
+        child: const FoodItemWidget(),
       ),
-      itemCount: product.length,
+      itemCount: foods.length,
     );
   }
 }

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-class Food{
+class FoodModel extends ChangeNotifier{
   final String? id;
   final String? title;
   final String? description;
   final String? imageUrl;
   final double? price;
-  bool? isFavorite;
+  bool isFavorite;
 
-  Food({
+  FoodModel({
     @required this.id,
     @required this.title,
     @required this.description,
@@ -15,4 +15,9 @@ class Food{
     @required this.price,
     this.isFavorite=false,
   });
+
+  toggleFavoriteData(){
+    isFavorite=!isFavorite;
+    notifyListeners();
+  }
 }

@@ -1,29 +1,66 @@
 import 'package:flutter/material.dart';
+import '../providers/food_model.dart';
+import 'package:provider/provider.dart';
 class FoodItemWidget extends StatelessWidget {
-  final String? id;
-  final String? title;
-  final String? imageUrl;
-  const FoodItemWidget(this.id, this.title,this.imageUrl, {Key? key}) : super(key: key);
+
+  const FoodItemWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final foodModel = Provider.of<FoodModel>(context);
     return ClipRRect(
       borderRadius: const BorderRadius.all(Radius.circular(10.0)),
       child: GridTile(
         child: GestureDetector(
           onTap: (){
-            Navigator.pushNamed(context, '/detail-page', arguments: id );
+            Navigator.pushNamed(context, '/detail-page', arguments: foodModel.id );
           },
           child: Image.asset(
-            imageUrl!,
+            foodModel.imageUrl.toString(),
             fit: BoxFit.fitHeight,
           ),
         ),
-        footer: GridTileBar(
-          backgroundColor: Colors.black45,
-          leading: const Icon(Icons.favorite),
-          title: Text(title!,textAlign: TextAlign.center,),
-          trailing: const Icon(Icons.shopping_cart),
+        header: GridTileBar(
+          leading: IconButton(
+            onPressed: () {
+              foodModel.toggleFavoriteData();
+            }, 
+            icon: Icon(foodModel.isFavorite?Icons.favorite:Icons.favorite_border,
+            color: Colors.amber,
+            size: 25.0,
+          )
+          ),
+          title: const Visibility(
+            child: Text('dfsdffdfdfdsf'),
+            visible: false,
+          ),
+          trailing:IconButton(
+            onPressed: () {}, 
+            icon:const Icon(
+              Icons.shopping_cart,
+              color: Colors.amber,
+              size: 25.0,
+            )
+          ),
+        ),
+        footer: Container(
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(50.0),
+              topLeft: Radius.circular(50.0)
+            ),
+            color: Colors.black45,
+          ),
+          child: GridTileBar(
+            // backgroundColor: Colors.black45,
+            title: Text(
+              foodModel.title!,
+              style: const TextStyle(
+                fontSize: 16.0
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
         ),
       ),
       

@@ -3,8 +3,6 @@ import '../providers/food_provider.dart';
 import 'package:provider/provider.dart';
 class FoodDetailScreen extends StatelessWidget {
   const FoodDetailScreen({Key? key}) : super(key: key);
- 
-  
   @override
   Widget build(BuildContext context) {
     final itemId = ModalRoute.of(context)!.settings.arguments as String;
