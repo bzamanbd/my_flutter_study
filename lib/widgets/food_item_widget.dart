@@ -29,15 +29,18 @@ class FoodItemWidget extends StatelessWidget {
               onPressed: () {
                 foodModel.toggleFavoriteData();
               }, 
-              icon: Icon(foodModel.isFavorite?Icons.favorite:Icons.favorite_border,
-              color: Colors.amber,
-              size: 25.0,
-            )
+              icon: Icon(
+                foodModel.isFavorite?Icons.favorite:Icons.favorite_border,
+                color: Colors.amber,
+                size: 25.0,
+              )
             ),
+
             title: const Visibility(
               child: Text('dfsdffdfdfdsf'),
               visible: false,
             ),
+
             trailing:IconButton(
               onPressed: () {
                 cartData.addItem(
@@ -45,9 +48,11 @@ class FoodItemWidget extends StatelessWidget {
                   foodModel.title.toString(), 
                   foodModel.price,
                 );
-              }, 
-              icon:const Icon(
-                Icons.shopping_cart,
+                foodModel.toggleCartData();
+              },
+               
+              icon: Icon(
+                foodModel.isCart? Icons.shopping_cart:Icons.shopping_cart_outlined,
                 color: Colors.amber,
                 size: 25.0,
               )

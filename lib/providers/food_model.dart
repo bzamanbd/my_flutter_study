@@ -6,6 +6,7 @@ class FoodModel extends ChangeNotifier{
   final String? imageUrl;
   final double price;
   bool isFavorite;
+  bool isCart;
 
   FoodModel({
     @required this.id,
@@ -14,10 +15,15 @@ class FoodModel extends ChangeNotifier{
     @required this.imageUrl,
     required this.price,
     this.isFavorite=false,
+    this.isCart=false,
   });
 
   toggleFavoriteData(){
     isFavorite=!isFavorite;
+    notifyListeners();
+  }
+  toggleCartData(){
+    isCart=!isCart;
     notifyListeners();
   }
 }
