@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../providers/cart_provider.dart';
 import '../providers/food_model.dart';
 import 'package:provider/provider.dart';
 class FoodItemWidget extends StatelessWidget {
@@ -8,6 +9,7 @@ class FoodItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final foodModel = Provider.of<FoodModel>(context);
+    final cartData = Provider.of<CartProvider>(context,listen: false);
     // print('called rebuild method');
     return Consumer<FoodModel>(
       builder: (context,foodModel,child)=>ClipRRect(
@@ -37,7 +39,13 @@ class FoodItemWidget extends StatelessWidget {
               visible: false,
             ),
             trailing:IconButton(
-              onPressed: () {}, 
+              onPressed: () {
+                cartData.addItem(
+                  foodModel.id.toString(), 
+                  foodModel.title.toString(), 
+                  foodModel.price,
+                );
+              }, 
               icon:const Icon(
                 Icons.shopping_cart,
                 color: Colors.amber,

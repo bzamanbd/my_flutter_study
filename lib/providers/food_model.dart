@@ -4,7 +4,7 @@ class FoodModel extends ChangeNotifier{
   final String? title;
   final String? description;
   final String? imageUrl;
-  final double? price;
+  final double price;
   bool isFavorite;
 
   FoodModel({
@@ -12,7 +12,7 @@ class FoodModel extends ChangeNotifier{
     @required this.title,
     @required this.description,
     @required this.imageUrl,
-    @required this.price,
+    required this.price,
     this.isFavorite=false,
   });
 

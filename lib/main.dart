@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../providers/cart_provider.dart';
 import 'package:provider/provider.dart';
 import '../providers/food_provider.dart';
 import '../screens/food_detail_screen.dart';
@@ -10,8 +11,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_)=>FoodProvider(),
+    return MultiProvider(
+      providers: [
+      ChangeNotifierProvider(create: (_)=>FoodProvider()),
+      ChangeNotifierProvider(create: (_)=>CartProvider()),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: title,
