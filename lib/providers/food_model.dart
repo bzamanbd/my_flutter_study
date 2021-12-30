@@ -7,7 +7,7 @@ class FoodModel extends ChangeNotifier{
   final double price;
   bool isFavorite;
   bool isCart;
-
+  
   FoodModel({
     @required this.id,
     @required this.title,

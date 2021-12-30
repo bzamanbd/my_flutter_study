@@ -49,12 +49,51 @@ class FoodItemWidget extends StatelessWidget {
                   foodModel.price,
                 );
                 foodModel.toggleCartData();
+                ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: 
+                const Text('Item is added',
+                style: TextStyle(fontSize: 17),
+                textAlign: TextAlign.center,
+                ),
+                duration: const Duration(seconds: 4),
+                action: SnackBarAction(
+                  label: 'UNDO', 
+                  onPressed: (){
+                    cartData.removeItem(foodModel.id.toString());
+                    foodModel.toggleCartData();
+                  }
+                  ),
+                )
+                );
+                
               },
                
-              icon: Icon(
-                foodModel.isCart? Icons.shopping_cart:Icons.shopping_cart_outlined,
-                color: Colors.amber,
-                size: 25.0,
+              icon: GestureDetector(
+                onDoubleTap: (){
+                  cartData.removeItem(foodModel.id.toString());
+                  foodModel.toggleCartData();
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: const Text('Item Removed',
+                    style: TextStyle(fontSize: 16,color: Colors.red),
+                    ),
+                    action: SnackBarAction(
+                      label: 'UNDO', 
+                      onPressed: (){
+                        cartData.addItem(
+                          foodModel.id.toString(), 
+                          foodModel.title.toString(), 
+                          foodModel.price,
+                          );
+                          foodModel.toggleCartData();
+                      }),
+                    )
+                  );
+                },
+                child: Icon(
+                  foodModel.isCart? Icons.shopping_cart:Icons.shopping_cart_outlined,
+                  color: Colors.amber,
+                  size: 25.0,
+                ),
               )
             ),
           ),
