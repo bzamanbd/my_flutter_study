@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../screens/cart_screen.dart';
 import '../providers/cart_provider.dart';
 import 'package:provider/provider.dart';
 import '../providers/food_provider.dart';
@@ -22,9 +23,11 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(primarySwatch: Colors.pink),
         
         routes: {
-          '/':(_)=> FoodOverViewScreen(title: title),
-         '/detail-page':(_)=>const FoodDetailScreen()
+          '/food-overview':(_)=> FoodOverViewScreen(title: title),
+         '/detail-page':(_)=>const FoodDetailScreen(),
+         '/cart-screen':(_)=>const CartScreen(),
         },
+        initialRoute: '/food-overview',
       ),
     );
   }

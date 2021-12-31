@@ -21,7 +21,9 @@ class FoodOverViewScreen extends StatelessWidget {
               child: IconButton(
               icon: const Icon(Icons.shopping_cart),
               color: Colors.white,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed('/cart-screen');
+              },
             ), 
               color: Colors.black54, 
               value: value.itemCount.toString()
