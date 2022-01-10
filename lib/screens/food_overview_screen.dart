@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/app_drawer_widget.dart';
 import '../providers/cart_provider.dart';
 import 'package:provider/provider.dart';
 import '../widgets/badge_widget.dart';
@@ -31,6 +32,7 @@ class FoodOverViewScreen extends StatelessWidget {
           )
         ],
       ),
+      drawer: const AppDrawer(),
       body:const FoodGridWidget(),
     );
   }

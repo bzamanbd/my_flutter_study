@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../providers/food_model.dart';
+import '../screens/food_list.dart';
 import '../screens/cart_screen.dart';
 import '../providers/cart_provider.dart';
 import 'package:provider/provider.dart';
@@ -16,6 +18,7 @@ class MyApp extends StatelessWidget {
       providers: [
       ChangeNotifierProvider(create: (_)=>FoodProvider()),
       ChangeNotifierProvider(create: (_)=>CartProvider()),
+      ChangeNotifierProvider(create: (_)=>FoodModel()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -26,6 +29,7 @@ class MyApp extends StatelessWidget {
           '/food-overview':(_)=> FoodOverViewScreen(title: title),
          '/detail-page':(_)=>const FoodDetailScreen(),
          '/cart-screen':(_)=>const CartScreen(),
+         '/foodlist-screen':(_)=>const FoodListScreen(),
         },
         initialRoute: '/food-overview',
       ),

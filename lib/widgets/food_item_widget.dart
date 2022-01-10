@@ -46,8 +46,8 @@ class FoodItemWidget extends StatelessWidget {
                 cartData.addItem(
                   foodModel.id.toString(), 
                   foodModel.title.toString(), 
-                  foodModel.price,
-                );
+                  foodModel.price!.toDouble()
+                  );
                 foodModel.toggleCartData();
                 ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: 
@@ -82,7 +82,7 @@ class FoodItemWidget extends StatelessWidget {
                         cartData.addItem(
                           foodModel.id.toString(), 
                           foodModel.title.toString(), 
-                          foodModel.price,
+                          foodModel.price!.toDouble(),
                           );
                           foodModel.toggleCartData();
                       }),

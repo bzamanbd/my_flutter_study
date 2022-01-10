@@ -4,16 +4,16 @@ class FoodModel extends ChangeNotifier{
   final String? title;
   final String? description;
   final String? imageUrl;
-  final double price;
+  final double? price;
   bool isFavorite;
   bool isCart;
   
   FoodModel({
-    @required this.id,
-    @required this.title,
-    @required this.description,
-    @required this.imageUrl,
-    required this.price,
+    this.id,
+    this.title,
+    this.description,
+    this.imageUrl,
+    this.price,
     this.isFavorite=false,
     this.isCart=false,
   });
